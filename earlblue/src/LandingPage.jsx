@@ -1,4 +1,5 @@
 import React from "react";
+import { AppBar, Toolbar, Typography, Button, Container, Grid, Card, CardContent, CardMedia, Box } from '@mui/material';
 import green from "./img/1.jpeg";
 import masala from "./img/2.jpeg";
 import herbal from "./img/3.jpeg";
@@ -9,126 +10,10 @@ import tulsi from "./img/7.jpeg";
 import kahwa from "./img/8.jpeg";
 import lemon from "./img/9.jpeg";
 
-
 export default function LandingPage() {
   return (
     <>
-      <style>{`
-        body {
-  margin: 0;
-  font-family: "Inter", sans-serif;
-  background: #faf7f2;
-  color: #333;
-}
-
-/* HEADER */
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 2% 4%;
-  background: #001f3f;
-  box-shadow: 0 0.2rem 0.6rem rgba(0,0,0,0.1);
-  position: sticky;
-  top: 0;
-  z-index: 10;
-}
-
-.logo {
-  font-size: 2rem;
-  font-weight: bold;
-  color: white;
-}
-
-.nav button {
-  background: none;
-  border: none;
-  margin-left: 2%;
-  font-size: 1rem;
-  cursor: pointer;
-  color: white;
-}
-
-.nav button:hover {
-  color: #4a7c59;
-}
-
-/* HERO */
-.hero {
-  width: 100%;
-  min-height: 80vh;
-  background: #001f3f; /* Navy Blue */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: white;
-  padding: 5% 5%;
-}
-
-.hero h1 {
-  font-size: clamp(2rem, 6vw, 4rem);
-  margin-bottom: 1rem;
-}
-
-.cta-btn {
-  padding: 1rem 2rem;
-  background: #4a7c59;
-  border: none;
-  color: white;
-  font-size: 1.2rem;
-  border-radius: 0.5rem;
-  cursor: pointer;
-}
-
-/* SECTIONS */
-section {
-  padding: 6% 5%;
-  width: 90%;
-  max-width: 1200px;
-  margin: auto;
-}
-
-/* PRODUCT GRID */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(20%, 1fr));
-  gap: 3%;
-}
-
-.card {
-  background: white;
-  padding: 5%;
-  border-radius: 1rem;
-  box-shadow: 0 0.2rem 0.8rem rgba(0,0,0,0.1);
-  text-align: center;
-}
-
-.card img {
-  width: 100%;
-  height: 20vh;
-  object-fit: cover;
-  border-radius: 0.8rem;
-  margin-bottom: 1rem;
-}
-
-.price {
-  font-weight: bold;
-  color: #4a7c59;
-}
-
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 3%;
-  background: #4a7c59;
-  color: white;
-}
-
-      `}</style>
-
       <Header />
-    
       <Products />
       <About />
       <Contact />
@@ -137,34 +22,21 @@ footer {
   );
 }
 
-/* HEADER */
 function Header() {
   return (
-    <div className="header">
-      <div className="logo">EarlBlue Tea Co.</div>
-      <div className="nav">
-        <button>Products</button>
-        <button>About Us</button>
-        <button>Contact</button>
-      </div>
-    </div>
-  );
-}
-/*
-function Hero() {
-  return (
-    <section className="hero">
-      <div>
-        <h1>Premium Organic Tea</h1>
-        <p>Handpicked from the finest gardens of India.</p>
-        <button className="cta-btn">Shop Now</button>
-      </div>
-    </section>
+    <AppBar position="sticky">
+      <Toolbar>
+        <Typography variant="h6" style={{ flexGrow: 1 }}>
+          EarlBlue Tea Co.
+        </Typography>
+        <Button color="inherit">Products</Button>
+        <Button color="inherit">About Us</Button>
+        <Button color="inherit">Contact</Button>
+      </Toolbar>
+    </AppBar>
   );
 }
 
-
- PRODUCTS */
 function Products() {
   const teas = [
     { name: "Moringa", img: green, price: "$12" },
@@ -176,54 +48,59 @@ function Products() {
     { name: "Ginger", img: tulsi, price: "$13" },
     { name: "Cardamom", img: kahwa, price: "$18" },
     { name: "Ayurvedic", img: lemon, price: "$12" },
-    
   ];
 
   return (
-    <section>
-      <h2>Our Tea Collection</h2>
-      <div className="grid">
+    <Container id="products" style={{ marginTop: '20px' }}>
+      <Typography variant="h4" align="center" gutterBottom>
+        Our Tea Collection
+      </Typography>
+      <Grid container spacing={4}>
         {teas.map((t, i) => (
-          <div key={i} className="card">
-            <img src={t.img} alt={t.name} />
-            <h3>{t.name}</h3>
-            <p className="price">{t.price}</p>
-          </div>
+          <Grid item key={i} xs={12} sm={6} md={4}>
+            <Card>
+              <CardMedia component="img" height="140" image={t.img} alt={t.name} />
+              <CardContent>
+                <Typography variant="h5">{t.name}</Typography>
+                <Typography variant="body2">{t.price}</Typography>
+              </CardContent>
+            </Card>
+          </Grid>
         ))}
-      </div>
-    </section>
+      </Grid>
+    </Container>
   );
 }
 
-/* ABOUT */
 function About() {
   return (
-    <section>
-      <h2>About Us</h2>
-      <p>
+    <Container style={{ marginTop: '20px' }}>
+      <Typography variant="h4">About Us</Typography>
+      <Typography>
         EarlBlue Tea Co. sources premium tea leaves from sustainable farms across India.
         Our mission is to bring freshness, purity, and wellness to every cup.
-      </p>
-    </section>
+      </Typography>
+    </Container>
   );
 }
 
-/* CONTACT */
 function Contact() {
   return (
-    <section>
-      <h2>Contact Us</h2>
-      <p>For business inquiries, collaborations, or wholesale orders, reach out anytime.</p>
-      <p>Email: support@earlbluetea.com</p>
-    </section>
+    <Container style={{ marginTop: '20px' }}>
+      <Typography variant="h4">Contact Us</Typography>
+      <Typography>
+        For business inquiries, collaborations, or wholesale orders, reach out anytime.
+        Email: support@earlbluetea.com
+      </Typography>
+    </Container>
   );
 }
 
-/* FOOTER */
 function Footer() {
   return (
-    <footer>
-      <p>© 2026 EarlBlue Tea Co. All rights reserved.</p>
-    </footer>
+    <Box component="footer" style={{ marginTop: '20px', background: '#4a7c59', color: 'white', padding: '10px 0' }}>
+      <Typography align="center">© 2026 EarlBlue Tea Co. All rights reserved.</Typography>
+    </Box>
   );
 }
+
