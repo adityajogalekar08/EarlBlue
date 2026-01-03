@@ -8,7 +8,7 @@ import white from "./img/6.jpeg";
 import tulsi from "./img/7.jpeg";
 import kahwa from "./img/8.jpeg";
 import lemon from "./img/9.jpeg";
-import jasmine from "./img/2.jpeg";
+
 
 export default function LandingPage() {
   return (
@@ -150,7 +150,7 @@ function Header() {
     </div>
   );
 }
-
+/*
 function Hero() {
   return (
     <section className="hero">
@@ -164,7 +164,7 @@ function Hero() {
 }
 
 
-/* PRODUCTS */
+ PRODUCTS */
 function Products() {
   const teas = [
     { name: "Moringa", img: green, price: "$12" },
