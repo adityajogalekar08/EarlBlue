@@ -1,121 +1,134 @@
 import React from "react";
+import green from "./img/1.jpeg";
+import masala from "./img/2.jpeg";
+import herbal from "./img/3.jpeg";
+import black from "./img/4.jpeg";
+import oolong from "./img/5.jpeg";
+import white from "./img/6.jpeg";
+import tulsi from "./img/7.jpeg";
+import kahwa from "./img/8.jpeg";
+import lemon from "./img/9.jpeg";
+import jasmine from "./img/2.jpeg";
 
 export default function LandingPage() {
   return (
     <>
       <style>{`
         body {
-          margin: 0;
-          font-family: "Inter", sans-serif;
-          background: #faf7f2;
-          color: #333;
-        }
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background: #faf7f2;
+  color: #333;
+}
 
-        /* HEADER */
-        .header {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          padding: 20px 40px;
-          background: #ffffff;
-          box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-          position: sticky;
-          top: 0;
-          z-index: 10;
-        }
+/* HEADER */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2% 4%;
+  background: #001f3f;
+  box-shadow: 0 0.2rem 0.6rem rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
 
-        .logo {
-          font-size: 1.5rem;
-          font-weight: bold;
-          color: #4a7c59;
-        }
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+}
 
-        .nav button {
-          background: none;
-          border: none;
-          margin-left: 20px;
-          font-size: 1rem;
-          cursor: pointer;
-          color: #333;
-        }
+.nav button {
+  background: none;
+  border: none;
+  margin-left: 2%;
+  font-size: 1rem;
+  cursor: pointer;
+  color: white;
+}
 
-        .nav button:hover {
-          color: #4a7c59;
-        }
+.nav button:hover {
+  color: #4a7c59;
+}
 
-        /* HERO */
-        .hero {
-          height: 70vh;
-          background: url("https://images.unsplash.com/photo-1513639725746-c5d3e861f32a") center/cover no-repeat;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          text-align: center;
-          color: white;
-          padding: 0 20px;
-        }
+/* HERO */
+.hero {
+  width: 100%;
+  min-height: 80vh;
+  background: #001f3f; /* Navy Blue */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 5% 5%;
+}
 
-        .hero h1 {
-          font-size: 3rem;
-          margin-bottom: 10px;
-        }
+.hero h1 {
+  font-size: clamp(2rem, 6vw, 4rem);
+  margin-bottom: 1rem;
+}
 
-        .cta-btn {
-          padding: 12px 28px;
-          background: #4a7c59;
-          border: none;
-          color: white;
-          font-size: 1.1rem;
-          border-radius: 6px;
-          cursor: pointer;
-        }
+.cta-btn {
+  padding: 1rem 2rem;
+  background: #4a7c59;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
 
-        /* SECTIONS */
-        section {
-          padding: 60px 20px;
-          max-width: 1200px;
-          margin: auto;
-        }
+/* SECTIONS */
+section {
+  padding: 6% 5%;
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
 
-        /* PRODUCT GRID */
-        .grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-          gap: 20px;
-        }
+/* PRODUCT GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20%, 1fr));
+  gap: 3%;
+}
 
-        .card {
-          background: white;
-          padding: 20px;
-          border-radius: 10px;
-          box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-          text-align: center;
-        }
+.card {
+  background: white;
+  padding: 5%;
+  border-radius: 1rem;
+  box-shadow: 0 0.2rem 0.8rem rgba(0,0,0,0.1);
+  text-align: center;
+}
 
-        .card img {
-          width: 100%;
-          height: 150px;
-          object-fit: cover;
-          border-radius: 8px;
-          margin-bottom: 10px;
-        }
+.card img {
+  width: 100%;
+  height: 20vh;
+  object-fit: cover;
+  border-radius: 0.8rem;
+  margin-bottom: 1rem;
+}
 
-        .price {
-          font-weight: bold;
-          color: #4a7c59;
-        }
+.price {
+  font-weight: bold;
+  color: #4a7c59;
+}
 
-        /* FOOTER */
-        footer {
-          text-align: center;
-          padding: 20px;
-          background: #4a7c59;
-          color: white;
-        }
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 3%;
+  background: #4a7c59;
+  color: white;
+}
+
       `}</style>
 
       <Header />
-      <Hero />
+    
       <Products />
       <About />
       <Contact />
@@ -132,13 +145,12 @@ function Header() {
       <div className="nav">
         <button>Products</button>
         <button>About Us</button>
-        <button>Contact Us</button>
+        <button>Contact</button>
       </div>
     </div>
   );
 }
 
-/* HERO */
 function Hero() {
   return (
     <section className="hero">
@@ -151,18 +163,20 @@ function Hero() {
   );
 }
 
+
 /* PRODUCTS */
 function Products() {
   const teas = [
-    { name: "Green Tea", img: "https://images.unsplash.com/photo-1509042239860-f550ce710b93", price: "$12" },
-    { name: "Masala Chai", img: "https://images.unsplash.com/photo-1600271886742-f049cd451bba", price: "$15" },
-    { name: "Herbal Tea", img: "https://images.unsplash.com/photo-1505576391880-b3f9d713dc5a", price: "$10" },
-    { name: "Black Tea", img: "https://images.unsplash.com/photo-1523906834658-6e24ef2386f9", price: "$11" },
-    { name: "Oolong Tea", img: "https://images.unsplash.com/photo-1523906834658-6e24ef2386f9", price: "$14" },
-    { name: "White Tea", img: "https://images.unsplash.com/photo-1513639725746-c5d3e861f32a", price: "$16" },
-    { name: "Tulsi Tea", img: "https://images.unsplash.com/photo-1505576391880-b3f9d713dc5a", price: "$13" },
-    { name: "Kashmiri Kahwa", img: "https://images.unsplash.com/photo-1600271886742-f049cd451bba", price: "$18" },
-    { name: "Lemon Ginger Tea", img: "https://images.unsplash.com/photo-1509042239860-f550ce710b93", price: "$12" },
+    { name: "Moringa", img: green, price: "$12" },
+    { name: "Ashwaganda", img: masala, price: "$15" },
+    { name: "Cinnamon", img: herbal, price: "$10" },
+    { name: "Saffron Turmeric", img: black, price: "$11" },
+    { name: "Clove", img: oolong, price: "$14" },
+    { name: "Rose", img: white, price: "$16" },
+    { name: "Ginger", img: tulsi, price: "$13" },
+    { name: "Cardamom", img: kahwa, price: "$18" },
+    { name: "Ayurvedic", img: lemon, price: "$12" },
+    
   ];
 
   return (
