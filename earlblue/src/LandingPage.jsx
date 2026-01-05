@@ -1,5 +1,10 @@
-import React from "react";
-import { AppBar, Toolbar, Typography, Button, Container, Grid, Card, CardContent, CardMedia, Box } from '@mui/material';
+import React, { useEffect, useState } from "react";
+import { 
+  AppBar, Toolbar, Typography, Button, Container, Grid, 
+  Card, CardContent, CardMedia, Box 
+} from '@mui/material';
+import { keyframes } from '@mui/system';
+
 import green from "./img/1.jpeg";
 import masala from "./img/2.jpeg";
 import herbal from "./img/3.jpeg";
@@ -37,6 +42,102 @@ function Header() {
   );
 }
 
+// Animation for cards
+const slideIn = keyframes`
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+`;
+
+// Extract two colors using Canvas
+function extractTwoColors(imgSrc, callback) {
+  const image = new Image();
+  image.src = imgSrc;
+  image.crossOrigin = "anonymous";
+
+  image.onload = () => {
+    const canvas = document.createElement("canvas");
+    const ctx = canvas.getContext("2d");
+
+    canvas.width = image.width;
+    canvas.height = image.height;
+
+    ctx.drawImage(image, 0, 0);
+
+    const data = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
+
+    let r = 0, g = 0, b = 0, count = 0;
+
+    for (let i = 0; i < data.length; i += 4) {
+      r += data[i];
+      g += data[i + 1];
+      b += data[i + 2];
+      count++;
+    }
+
+    const avgR = Math.floor(r / count);
+    const avgG = Math.floor(g / count);
+    const avgB = Math.floor(b / count);
+
+    const color1 = `rgb(${avgR}, ${avgG}, ${avgB})`;
+
+    // Slightly darker secondary color
+    const color2 = `rgb(${avgR * 0.7}, ${avgG * 0.7}, ${avgB * 0.7})`;
+
+    callback(color1, color2);
+  };
+}
+
+function TeaCard({ name, img, price }) {
+  const [gradient, setGradient] = useState("linear-gradient(135deg, #ffffff, #dddddd)");
+
+  useEffect(() => {
+    extractTwoColors(img, (c1, c2) => {
+      setGradient(`linear-gradient(135deg, ${c1}, ${c2})`);
+    });
+  }, [img]);
+
+  return (
+    <Card
+      sx={{
+        maxWidth: 360,
+        borderRadius: 4,
+        overflow: "hidden",
+        background: gradient,
+        boxShadow: "0 8px 24px rgba(0,0,0,0.12)",
+        animation: `${slideIn} 0.7s ease-out`,
+        transition: "transform 0.3s ease, box-shadow 0.3s ease",
+        "&:hover": {
+          transform: "translateY(-6px)",
+          boxShadow: "0 12px 32px rgba(0,0,0,0.18)",
+        },
+      }}
+    >
+      <CardMedia
+        component="img"
+        height="180"
+        image={img}
+        alt={name}
+      />
+
+      <CardContent>
+        <Typography variant="h5" sx={{ fontWeight: 700 }}>
+          {name}
+        </Typography>
+
+        <Typography variant="body2" sx={{ mt: 1, color: "text.secondary" }}>
+          {price}
+        </Typography>
+      </CardContent>
+    </Card>
+  );
+}
+
 function Products() {
   const teas = [
     { name: "Moringa", img: green, price: "$12" },
@@ -55,16 +156,13 @@ function Products() {
       <Typography variant="h4" align="center" gutterBottom>
         Our Tea Collection
       </Typography>
+
       <Grid container spacing={4}>
         {teas.map((t, i) => (
-          <Grid item key={i} xs={12} sm={6} md={4}>
-            <Card>
-              <CardMedia component="img" height="140" image={t.img} alt={t.name} />
-              <CardContent>
-                <Typography variant="h5">{t.name}</Typography>
-                <Typography variant="body2">{t.price}</Typography>
-              </CardContent>
-            </Card>
+          <Grid item key={i} xs={4}>
+            <Box sx={{ display: "flex", justifyContent: "center" }}>
+              <TeaCard name={t.name} img={t.img} price={t.price} />
+            </Box>
           </Grid>
         ))}
       </Grid>
@@ -98,9 +196,13 @@ function Contact() {
 
 function Footer() {
   return (
-    <Box component="footer" style={{ marginTop: '20px', background: '#4a7c59', color: 'white', padding: '10px 0' }}>
-      <Typography align="center">© 2026 EarlBlue Tea Co. All rights reserved.</Typography>
+    <Box 
+      component="footer" 
+      style={{ marginTop: '20px', background: '#4a7c59', color: 'white', padding: '10px 0' }}
+    >
+      <Typography align="center">
+        © 2026 EarlBlue Tea Co. All rights reserved.
+      </Typography>
     </Box>
   );
 }
-
