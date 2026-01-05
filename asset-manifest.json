@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/EarlBlue/static/css/main.e6c13ad2.css",
+    "main.js": "/EarlBlue/static/js/main.5a6d0f6a.js",
+    "static/js/453.5348c750.chunk.js": "/EarlBlue/static/js/453.5348c750.chunk.js",
+    "static/media/9.jpeg": "/EarlBlue/static/media/9.e941ee5c47090c3fc614.jpeg",
+    "static/media/8.jpeg": "/EarlBlue/static/media/8.5b1c7b91cc300a2d43d0.jpeg",
+    "static/media/3.jpeg": "/EarlBlue/static/media/3.132be1867944f0ba0fc4.jpeg",
+    "static/media/4.jpeg": "/EarlBlue/static/media/4.7a77f0da1f7dd8c0ee4b.jpeg",
+    "static/media/7.jpeg": "/EarlBlue/static/media/7.27c210a767de6cb5f9ba.jpeg",
+    "static/media/5.jpeg": "/EarlBlue/static/media/5.8ab864d6ec0fdc084cdf.jpeg",
+    "static/media/6.jpeg": "/EarlBlue/static/media/6.f468a3bf8102c0fe3d66.jpeg",
+    "static/media/1.jpeg": "/EarlBlue/static/media/1.06e10251918fdabc7c58.jpeg",
+    "static/media/2.jpeg": "/EarlBlue/static/media/2.341a81fee769912cb68d.jpeg",
+    "index.html": "/EarlBlue/index.html",
+    "main.e6c13ad2.css.map": "/EarlBlue/static/css/main.e6c13ad2.css.map",
+    "main.5a6d0f6a.js.map": "/EarlBlue/static/js/main.5a6d0f6a.js.map",
+    "453.5348c750.chunk.js.map": "/EarlBlue/static/js/453.5348c750.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.5a6d0f6a.js"
+  ]
+}
