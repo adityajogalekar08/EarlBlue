@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/EarlBlue/static/css/main.fc1bcd19.css",
-    "main.js": "/EarlBlue/static/js/main.097f29a4.js",
+    "main.js": "/EarlBlue/static/js/main.d7833274.js",
     "static/js/453.5348c750.chunk.js": "/EarlBlue/static/js/453.5348c750.chunk.js",
     "static/media/tea-bg-vid.mp4": "/EarlBlue/static/media/tea-bg-vid.affdbcf0be6cb3132521.mp4",
     "static/media/playfair-display-latin-600-normal.woff": "/EarlBlue/static/media/playfair-display-latin-600-normal.9d993db7549b0f1efc9d.woff",
@@ -14,11 +14,11 @@
     "static/media/playfair-display-vietnamese-600-normal.woff2": "/EarlBlue/static/media/playfair-display-vietnamese-600-normal.dd555f2877b4898e16bf.woff2",
     "index.html": "/EarlBlue/index.html",
     "main.fc1bcd19.css.map": "/EarlBlue/static/css/main.fc1bcd19.css.map",
-    "main.097f29a4.js.map": "/EarlBlue/static/js/main.097f29a4.js.map",
+    "main.d7833274.js.map": "/EarlBlue/static/js/main.d7833274.js.map",
     "453.5348c750.chunk.js.map": "/EarlBlue/static/js/453.5348c750.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.fc1bcd19.css",
-    "static/js/main.097f29a4.js"
+    "static/js/main.d7833274.js"
   ]
 }
