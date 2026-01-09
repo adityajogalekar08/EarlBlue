@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import {
   AppBar,
   Toolbar,
@@ -26,6 +26,21 @@ const LandingPage = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
   const [drawerOpen, setDrawerOpen] = useState(false);
+
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      const playPromise = videoRef.current.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {
+          // Force play if browser blocks autoplay
+          videoRef.current.muted = true;
+          videoRef.current.play();
+        });
+      }
+    }
+  }, []);
 
   const menuItems = ["Products", "Collection", "Specials", "About Us"];
 
@@ -143,14 +158,18 @@ const LandingPage = () => {
           <>
             {/* Video */}
             <video
+              ref={videoRef}
               autoPlay
               loop
               muted
               playsInline
+              preload="auto"
+              onLoadedData={() => videoRef.current && videoRef.current.play()}
               style={{
                 width: "100%",
                 height: "100%",
                 objectFit: "cover",
+                pointerEvents: "none",
               }}
             >
               <source src={gbVideo} type="video/mp4" />
@@ -164,7 +183,7 @@ const LandingPage = () => {
                 left: 0,
                 width: "100%",
                 height: "100%",
-                backgroundColor: "rgba(0,0,0,0.45)", // adjust opacity here
+                backgroundColor: "rgba(0,0,0,0.45)",
                 zIndex: 5,
               }}
             />
