@@ -3,6 +3,7 @@
     "gh-pages": "^6.3.0"
   },
   "dependencies": {
+    "@fontsource/playfair-display": "^5.2.8",
     "node-vibrant": "^4.0.3"
   }
 }
