@@ -1,9 +1,11 @@
 {
   "files": {
     "main.css": "/EarlBlue/static/css/main.fc1bcd19.css",
-    "main.js": "/EarlBlue/static/js/main.d7833274.js",
+    "main.js": "/EarlBlue/static/js/main.d0b79425.js",
     "static/js/453.5348c750.chunk.js": "/EarlBlue/static/js/453.5348c750.chunk.js",
     "static/media/tea-bg-vid.mp4": "/EarlBlue/static/media/tea-bg-vid.affdbcf0be6cb3132521.mp4",
+    "static/media/3.jpeg": "/EarlBlue/static/media/3.132be1867944f0ba0fc4.jpeg",
+    "static/media/2.jpeg": "/EarlBlue/static/media/2.341a81fee769912cb68d.jpeg",
     "static/media/playfair-display-latin-600-normal.woff": "/EarlBlue/static/media/playfair-display-latin-600-normal.9d993db7549b0f1efc9d.woff",
     "static/media/playfair-display-latin-600-normal.woff2": "/EarlBlue/static/media/playfair-display-latin-600-normal.bfb61dccc8300c68aa16.woff2",
     "static/media/playfair-display-latin-ext-600-normal.woff": "/EarlBlue/static/media/playfair-display-latin-ext-600-normal.035506bace019c3e0029.woff",
@@ -14,11 +16,11 @@
     "static/media/playfair-display-vietnamese-600-normal.woff2": "/EarlBlue/static/media/playfair-display-vietnamese-600-normal.dd555f2877b4898e16bf.woff2",
     "index.html": "/EarlBlue/index.html",
     "main.fc1bcd19.css.map": "/EarlBlue/static/css/main.fc1bcd19.css.map",
-    "main.d7833274.js.map": "/EarlBlue/static/js/main.d7833274.js.map",
+    "main.d0b79425.js.map": "/EarlBlue/static/js/main.d0b79425.js.map",
     "453.5348c750.chunk.js.map": "/EarlBlue/static/js/453.5348c750.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.fc1bcd19.css",
-    "static/js/main.d7833274.js"
+    "static/js/main.d0b79425.js"
   ]
 }
