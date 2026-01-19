@@ -1,9 +1,9 @@
 import * as React from "react";
 import { Box, Grid, Typography, Button } from "@mui/material";
-import TeaImage1 from "../src/img/tea-ds.jpg";
+
 import TeaImage2 from "../src/img/tee-ds2.jpg";
 import One from "../src/img/tea-ds1.jpg";
-import Two from "../src/img/tee-ds2.jpg";
+
 export default function DiscoverSection() {
   return (
     <Box
