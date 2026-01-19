@@ -11,6 +11,9 @@ export default function DiscoverSection() {
     px: { xs: 2, md: 4 },
         py: 8,
         marginTop: 4,
+        background: "linear-gradient(135deg, #ff6ec4, #7873f5, #4ade80)",
+          backgroundSize: "100% 100%",
+        animation: "bgShift 10s ease infinite",
         
   }}
     >
@@ -102,6 +105,18 @@ export default function DiscoverSection() {
           </Box>
         </Grid>
       </Grid>
+       <style>
+        {`
+
+          /* Background animation */
+          @keyframes bgShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+          }
+
+        `}
+      </style>
     </Box>
   );
 }
