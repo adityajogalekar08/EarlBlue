@@ -15,7 +15,7 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useTheme } from "@mui/material/styles";
-
+import EarlBlueLogo from "../src/img/logo.jpeg";
 // Import video
 import gbVideo from "./img/tea-bg-vid.mp4";
 
@@ -79,16 +79,12 @@ const LandingPage = () => {
         <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
           
           {/* Logo */}
-          <Typography
-            variant="h6"
-            sx={{
-              fontWeight: "bold",
-              color: goldColor,
-              fontFamily: "'Playfair Display', serif",
-            }}
-          >
-            LOGO
-          </Typography>
+          <img
+    src={EarlBlueLogo}
+    alt="Logo"
+    style={{ height: 100, objectFit: "contain" }}
+  />
+
 
           {/* Desktop Menu */}
           {!isMobile && (
